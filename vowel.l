@@ -1,12 +1,10 @@
-consonant[b-df-h-np-tv-zB-DF-HJ-NP-TV-Z]
-vowel[aeiouAEIOU]
 %{
   #include <stdio.h>
 %}
 
 %%
-^{vowel}  printf("Vowel");
-^{consonant} printf("Consonant");
+^[aeiouAEIOU]  { printf("Vowel\n"); }
+^[b-df-hj-np-tv-zB-DF-HJ-NP-TV-Z] { printf("Consonant\n"); }
 %%
 
 int main() {
