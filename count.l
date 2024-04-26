@@ -5,6 +5,7 @@
 %%
 \$   return 0;
 \n   c1++;
+if {printf("Keyword %s", yytext);
 ([a-zA-Z0-9])+   {c2++; c3 += yyleng;}
 %%
 
@@ -12,5 +13,4 @@ int yywrap(){return 1;}
 
 int main() {
   yylex();
-  printf("%d %d %d", c1, c2, c3);
 }
