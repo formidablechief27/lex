@@ -5,18 +5,15 @@
 
 %%
     [a-zA-z]+{
-    	int flag = 1;
-    	display(yytext, flag);
+    	display(yytext, 1);
     	return 0;
 	}
 	[0-9]+{
-        int flag = 2;
-        display(yytext, flag);
+        display(yytext, 2);
         return 0;
     }
 	.+{
-        int flag = 0;
-        display(yytext, flag);
+        display(yytext, 0);
         return 0;
     }
 %%
