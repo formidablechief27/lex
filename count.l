@@ -5,8 +5,8 @@
 %%
 \$   return 0;
 \n   c1++;
-if {printf("Keyword %s", yytext);}
-([a-zA-Z0-9])+   {c2++; c3 += yyleng;}
+if|else|switch|public|void|static {printf("Keyword %s", yytext);}
+[+|-|*|%|/] {printf("Operator %s", yytext);}
 %%
 
 int yywrap(){return 1;}
