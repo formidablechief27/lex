@@ -1,14 +1,15 @@
 %{
+    #include <stdio.h>
     void display(char[], int);
 %}
 
 %%
-    [a-zA-z]+[\n\t]{
+    [a-zA-z]+{
     	int flag = 1;
     	display(yytext, flag);
     	return 0;
 	}
-	[0-9]+[\n\t] {
+	[0-9]+{
         int flag = 2;
         display(yytext, flag);
         return 0;
